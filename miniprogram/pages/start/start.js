@@ -11,7 +11,7 @@ Page({
     let that = this
     let userInfo = wx.getStorageSync('userInfo')
     if (!userInfo) {
-      console.log(1);
+      console.log(12);
     } else {
       that.setData({
         userInfo: userInfo
