@@ -21,7 +21,7 @@ App({
 
     if (!wx.cloud) {
 
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力');
 
     } else {
 
@@ -34,9 +34,73 @@ App({
         env: 'suyi-b6byh',
         traceUser: true,
       })
-      
+
+      const openid = wx.getStorageSync('openid');
+
+      if (openid) {
+
+        that.globalData.openid = openid;
+
+      } else {
+
+        wx.cloud.callFunction({
+          name: 'login',
+          data: {},
+          success: res => {
+            that.globalData.openid = res.result.openid
+            wx.setStorageSync('openid', res.result.openid);
+          }
+        })
+
+      }
+
+      console.info(that.globalData.openid);
+
     }
 
-    this.globalData = {}
+    this.updateManager();
+
+  },
+
+  /**
+ * 小程序主动更新
+ */
+  updateManager() {
+    if (!wx.canIUse('getUpdateManager')) {
+      return false;
+    }
+
+    const updateManager = wx.getUpdateManager();
+
+    updateManager.onCheckForUpdate(function (res) {
+    });
+
+    updateManager.onUpdateReady(function () {
+      wx.showModal({
+        title: '有新版本',
+        content: '新版本已经准备好，即将重启',
+        showCancel: false,
+        success(res) {
+          if (res.confirm) {
+            updateManager.applyUpdate()
+          }
+        }
+      });
+    });
+    
+    updateManager.onUpdateFailed(function () {
+      wx.showModal({
+        title: '更新提示',
+        content: '新版本下载失败',
+        showCancel: false
+      })
+    });
+  },
+
+  globalData: {
+    openid: "",
+    userInfo: null,
+    advert: {},
+    lastLoginDate: ""//最后登录时间
   }
 })

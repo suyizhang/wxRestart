@@ -9,6 +9,7 @@ Page({
   onGetWeRunData() {
     wx.getWeRunData({
       success: res => {
+        console.log(res, 'res');
         wx.cloud.callFunction({
           name: 'echo',
           data: {

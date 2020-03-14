@@ -7,9 +7,10 @@
     <text class="title">let's survive</text>
     <view class="content">
       <view class="hd" style="transform:rotateZ({{angle}}deg);">
-        <image class="logo" src="{{userInfo.avatarUrl}}"></image>
-        <image class="wave" src="/images/more/wave.png" mode="aspectFill"></image>
-        <image class="wave wave-bg" src="/images/more/wave.png" mode="aspectFill"></image>
+        <open-data class="logo" type="userAvatarUrl"></open-data>
+        <open-data type="userNickName" lang="zh_CN"></open-data>
+        <!-- <image class="wave" src="/images/more/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/images/more/wave.png" mode="aspectFill"></image> -->
       </view>
     </view>
   </block>

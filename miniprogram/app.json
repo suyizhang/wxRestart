@@ -2,6 +2,7 @@
   "pages": [
     "pages/start/start",
     "pages/index/index",
+    "pages/image/image",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -21,6 +22,32 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "素衣拂微澜",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#abb4bf",
+    "backgroundColor": "#fff",
+    "selectedColor": "#FFA500",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tab/tab_home.png",
+        "selectedIconPath": "images/tab/tab_home_activity.png"
+      },
+      {
+        "pagePath": "pages/image/image",
+        "text": "图片",
+        "iconPath": "images/tab/tab_image.png",
+        "selectedIconPath": "images/tab/tab_image_activity.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我",
+        "iconPath": "images/tab/tab_profile.png",
+        "selectedIconPath": "images/tab/tab_profile_activity.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
