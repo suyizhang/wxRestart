@@ -1,2 +1,36 @@
 <!--miniprogram/pages/home/home.wxml-->
-<text>miniprogram/pages/home/home.wxml</text>
+<!-- 搜索框 -->
+<!-- <view class="index-box"> -->
+  <!-- <form bindsubmit="bindsubmit">
+    <view class='cu-bar search bg-white'>
+      <view class='search-form round'>
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="搜索感兴趣的文章" value="{{defaultSearchValue}}" bindconfirm="bindconfirm" name="searchContent" confirm-type="search"></input>
+      </view>
+    </view>
+  </form> -->
+
+  <!-- <scroll-view scroll-x class="bg-white nav solid-bottom">
+    <view class="flex text-center">
+      <view wx:for="{{tabItems}}" wx:for-index="idx" data-data="{{item}}" class="cu-item flex-sub {{item.index === tabCurrent ? 'text-yellow cur':''}}" wx:key="index" bindtap='tabSelect' data-id="{{item.index}}">
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view> -->
+
+<!-- </view> -->
+
+<view  class="blog-lis-view">
+  <view class="cu-card no-card" wx:for="{{blogList}}" wx:key="idx" wx:for-index="idx">
+   <view class='text-content margin-top-sm'>{{item.title}}</view>
+    <view class="grid col-1 flex-sub padding-lr">
+      <view class="bg-img only-img" style="background-image:url({{item.defaultImageUrl}})"></view>
+    </view>
+    <view class='text-gray text-sm text-right padding'>
+      <text class="cuIcon-timefill"></text> {{item.createTime}}
+      <text class="cuIcon-attentionfill" /> {{item.totalVisits}}
+      <text class="cuIcon-appreciatefill" /> {{item.totalZans}}
+      <text class="cuIcon-messagefill" /> {{item.totalComments}}
+    </view>
+  </view>
+</view>

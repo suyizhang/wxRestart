@@ -1,0 +1,32 @@
+/* miniprogram/pages/me/me.wxss */
+.wrapper {
+  padding-top: 20rpx;
+}
+
+.profile {
+    height: 180rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40rpx;
+}
+
+.info {
+  display: flex;
+}
+
+.info .avatar{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 30%;
+  overflow: hidden;
+}
+
+.info .text {
+  padding-left: 40rpx;
+}
+
+.nick {
+  font-size:  40rpx;
+  color: #333;
+}

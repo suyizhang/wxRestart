@@ -1,17 +1,5 @@
 <!--start.wxml-->
 <view class="container">
-  <view class="false-box" wx:if='{{Object.keys(userInfo).lenght}}'>
-    <image class="false-image" src="./user-unlogin.png"></image>
-  </view>
-  <block wx:else>
-    <text class="title">let's survive</text>
-    <view class="content">
-      <view class="hd" style="transform:rotateZ({{angle}}deg);">
-        <open-data class="logo" type="userAvatarUrl"></open-data>
-        <open-data type="userNickName" lang="zh_CN"></open-data>
-        <!-- <image class="wave" src="/images/more/wave.png" mode="aspectFill"></image>
-        <image class="wave wave-bg" src="/images/more/wave.png" mode="aspectFill"></image> -->
-      </view>
-    </view>
-  </block>
+  <image class="container-image" src="/images/start_bg.jpeg"></image>
+  <text class="container-text"> — 素衣拂微澜</text>
 </view>

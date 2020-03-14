@@ -1,19 +1,13 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/me/me.js
+import { navigatItem } from '../../utils/utils.js';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    page: 1,
-    defaultSearchValue: '',
-    tabItems: [
-      { name: '热门', index: 0 },
-      { name: '最新', index: 1 },
-      { name: '热榜', index: 2 },
-    ],
-    tabCurrent: 0,
-    blogList: [1, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3],
+
   },
 
   /**
@@ -55,7 +49,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log(1);
+
   },
 
   /**
@@ -72,27 +66,8 @@ Page({
 
   },
 
-  /**
-   * 搜索框搜索
-   */
-  bindsubmit: function () {
-
-  },
-
-  /**
-   * 切换tab
-   */
-  tabSelect: function (e) {
-    let that = this;
-
-    const tabCurrent = e.currentTarget.dataset.id;
-
-    that.setData({
-
-      tabCurrent,
-
-    });
+  navigatItem: function (e) {
+    return navigatItem(e)
   }
-
 
 })

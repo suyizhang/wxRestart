@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/start/start",
+    "pages/me/me",
     "pages/index/index",
     "pages/image/image",
     "pages/userConsole/userConsole",
@@ -17,9 +17,9 @@
     "pages/im/room/room"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#fff",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "素衣拂微澜",
     "navigationBarTextStyle": "black"
   },
@@ -42,7 +42,7 @@
         "selectedIconPath": "images/tab/tab_image_activity.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/me/me",
         "text": "我",
         "iconPath": "images/tab/tab_profile.png",
         "selectedIconPath": "images/tab/tab_profile_activity.png"
