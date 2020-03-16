@@ -1,4 +1,6 @@
 /* miniprogram/pages/me/me.wxss */
+@import "../template/login/login.wxss";
+
 .wrapper {
   padding-top: 20rpx;
 }

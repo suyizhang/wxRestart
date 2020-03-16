@@ -1,4 +1,5 @@
 <!--miniprogram/pages/me/me.wxml-->
+<import src="../template/login/login" />
 <view class="wrapper">
 
   <!-- 个人信息 -->
@@ -14,6 +15,15 @@
   </view>
 
   <view class="card items">
+
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/favorate/favorate'>
+      <view class='title'>
+        <image src='/images/ic_heart_entry_bottom_full.png'></image>
+        <view>我喜欢的</view>
+      </view>
+      <view class='count'>{{userInfo.collectedEntriesCount || 0}}篇</view>
+    </view>
+
     <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/readHistory/readHistory'>
       <view class='title'>
         <image src='/images/view.png'></image>
@@ -21,7 +31,26 @@
       </view>
       <view class='count'>{{0}}篇</view>
     </view>
+
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/myPins/myPins?liked=1'>
+      <view class='title'>
+        <image src='/images/user_liked_pin.png'></image>
+        <view>赞过的文章</view>
+      </view>
+      <view class='count'>{{userInfo.likedPinCount || 0}}个</view>
+    </view>
   </view>
 
+  <view class="card items">
+      <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/setting/setting' data-open='true'>
+      <view class='title'>
+        <image src='/images/settings.png'></image>
+        <view>设置</view>
+      </view>
+    </view>
+  </view>
+
+
+  <template is="login" data="{{showLogin: showLogin}}"></template>
 
 </view>

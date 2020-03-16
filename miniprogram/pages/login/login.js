@@ -1,12 +1,11 @@
-// miniprogram/pages/index/index.js
+// pages/login/login.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    page: 1,
-    blogList: [1, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3],
+
   },
 
   /**
@@ -48,7 +47,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log(1);
+
   },
 
   /**
@@ -63,29 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  /**
-   * 搜索框搜索
-   */
-  bindsubmit: function () {
-
-  },
-
-  /**
-   * 切换tab
-   */
-  tabSelect: function (e) {
-    let that = this;
-
-    const tabCurrent = e.currentTarget.dataset.id;
-
-    that.setData({
-
-      tabCurrent,
-
-    });
   }
-
-
 })

@@ -14,7 +14,8 @@
     "pages/openapi/callback/callback",
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
-    "pages/im/room/room"
+    "pages/im/room/room",
+    "pages/login/login"
   ],
   "window": {
     "backgroundColor": "#fff",
@@ -31,7 +32,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
+        "text": "主页",
         "iconPath": "images/tab/tab_home.png",
         "selectedIconPath": "images/tab/tab_home_activity.png"
       },

@@ -1,0 +1,13 @@
+<template name="login">
+  <view class="login-modal {{showLogin?'show':''}}">
+    <view class="login-dialog">
+      <view class='login-text'>允许微信授权后,可体验更多功能</view>
+      <view class="login-bar">
+          <button class='login-btn text-yellow' style='padding:0 90rpx' bindtap='navigateBack'>返回首页</button>
+          <button open-type='getUserInfo' class='login-btn bg-yellow' style='padding:0 90rpx' bindgetuserinfo="getUserInfo">
+            授权登录
+          </button>
+      </view>
+    </view>
+  </view>
+</template>
