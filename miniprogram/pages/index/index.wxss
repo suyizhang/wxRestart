@@ -1,5 +1,6 @@
 /* miniprogram/pages/index/index.wxss */
 
 .blog-lis-view {
-  height: calc(100vh - 80px);
+  /* height: calc(100vh - 80px); */
+  /* padding-top: 18rpx; */
 }

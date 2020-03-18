@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/me/me",
     "pages/index/index",
     "pages/image/image",
+    "pages/me/me",
+    "pages/me/components/like/like",
+    "pages/me/components/read/read",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -15,7 +17,8 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/login/login"
+    "pages/me/components/fabulous/fabulous",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundColor": "#fff",

@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "blogCard": "/components/blogCard/blogCard"
+  },
   "navigationBarTitleText": "主页",
   "backgroundTextStyle": "dark",
   "enablePullDownRefresh": true

@@ -1,20 +1,18 @@
-// miniprogram/pages/index/index.js
-import { queryList } from '../../service/blog';
+// miniprogram/pages/me/components/read/read.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    page: 1,
-    blogList: [1, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3],
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.queryList();
+
   },
 
   /**
@@ -49,14 +47,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log(1);
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log('asda');
+
   },
 
   /**
@@ -64,22 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  /**
-   * 搜索框搜索
-   */
-  bindsubmit: function () {
-
-  },
-
-/**
- * 请求数据
- */
-queryList: function(page = 1) {
-  return queryList({ page }).then(res => {
-    console.info(res);
-  });
-}
-
+  }
 })

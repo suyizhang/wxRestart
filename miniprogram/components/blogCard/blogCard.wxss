@@ -1,0 +1,65 @@
+/* miniprogram/components/blogItem/blogItem.wxss */
+.item {
+  padding: 0 30rpx;
+  background: #fff;
+  margin-bottom: 18rpx;
+}
+.header {
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  font-size: 28rpx;
+  color: #abb4bf;
+}
+
+.header .header-message {
+  display: flex;
+  align-items: center;
+}
+
+.atvg {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.content {
+  margin-bottom: 10rpx;
+}
+
+.content .title {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+
+.content .desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: #abb4bf;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  color: #abb4bf;
+  margin-right: 40rpx;
+}
+
+.label-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 8rpx;
+}

@@ -1,14 +1,3 @@
-<view  class="blog-lis-view">
-  <view class="cu-card no-card" wx:for="{{blogList}}" wx:key="idx" wx:for-index="idx">
-   <view class='text-content margin-top-sm'>{{item.title}}</view>
-    <view class="grid col-1 flex-sub padding-lr">
-      <view class="bg-img only-img" style="background-image:url({{item.defaultImageUrl}})"></view>
-    </view>
-    <view class='text-gray text-sm text-right padding'>
-      <text class="cuIcon-timefill"></text> {{item.createTime}}
-      <text class="cuIcon-attentionfill" /> {{item.totalVisits}}
-      <text class="cuIcon-appreciatefill" /> {{item.totalZans}}
-      <text class="cuIcon-messagefill" /> {{item.totalComments}}
-    </view>
-  </view>
+<view class="blog-lis-view">
+  <blogCard wx:for="{{[{a:1}, {a:1}, {a:1}, {a: 2}, {a: 3}]}}" wx:key='index' item="{{item}}" />
 </view>

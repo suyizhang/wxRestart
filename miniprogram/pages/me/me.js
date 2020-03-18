@@ -11,7 +11,6 @@ Page({
   data: {
     showLogin: false, // 显隐登录框
     userInfo: {},
-    a: 1,
   },
 
   /**

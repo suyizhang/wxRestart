@@ -1,4 +1,4 @@
-// pages/login/login.js
+// miniprogram/pages/me/components/fabulous/fabulous.js
 Page({
 
   /**
