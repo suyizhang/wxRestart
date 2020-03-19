@@ -1,6 +1,10 @@
 //app.js
 App({
+
   navigateToLogin: false,
+
+  towxml: require('/towxml/index'),
+
   onLaunch: function () {
 
     var that = this;
@@ -127,5 +131,7 @@ App({
     userInfo: null,
     advert: {},
     lastLoginDate: ""//最后登录时间
-  }
+  },
+
+
 })

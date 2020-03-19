@@ -4,6 +4,7 @@
   background: #fff;
   margin-bottom: 18rpx;
 }
+
 .header {
   display: flex;
   align-items: center;
@@ -42,6 +43,8 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+  text-indent: 48rpx;
+  line-height: 40rpx;
   color: #abb4bf;
 }
 

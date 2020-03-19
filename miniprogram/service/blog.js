@@ -8,3 +8,14 @@ export function queryList({ page = 1 }) {
     }
   })
 }
+
+export function queryDetail(option) {
+  console.log(option);
+  return wx.cloud.callFunction({
+    name: 'blog',
+    data: {
+      action: 'queryDetail',
+      ...option
+    }
+  })
+}

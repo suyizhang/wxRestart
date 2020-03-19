@@ -1,0 +1,15 @@
+<!--miniprogram/pages/detail/detail.wxml-->
+<view class="detail">
+  <view class="header">
+    <view class="info">
+      <image class="header-image" src="{{userInfo.avatarUrl}}"></image>
+      <text class="header-name">{{userInfo.nickName}}</text>
+    </view>
+    <view class="desc">
+      {{blogMessage.desc}}
+    </view>
+  </view>
+  <view class="content">
+    <towxml nodes="{{article}}"/>
+  </view>
+</view>

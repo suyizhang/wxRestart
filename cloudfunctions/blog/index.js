@@ -11,18 +11,23 @@ const _ = db.command;
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  
-  const wxContext = cloud.getWXContext();
 
-  switch(event.action) {
+  switch (event.action) {
+    //  请求list
     case 'queryList': {
       return queryList(event);
     }
+
+    case 'queryDetail': {
+      return queryDetail(event);
+    }
     default: break
   }
+
 }
 
 const queryList = async ({ page = 1 }) => {
+
   return db.collection('blog_list')
     .skip((page - 1) * 10)
     .limit(10)
@@ -32,5 +37,12 @@ const queryList = async ({ page = 1 }) => {
       createTime: true,
       desc: true,
       title: true,
+      commentTatal: true,
+      likeTotal: true,
     }).get();
+
+};
+
+const queryDetail = ({ id }) => {
+  return db.collection('blog_list').doc(id).get()
 }

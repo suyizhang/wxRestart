@@ -1,20 +1,26 @@
-// miniprogram/pages/index/index.js
-import { queryList } from '../../service/blog';
+// miniprogram/pages/detail/detail.js
+import { queryDetail } from '../../service/blog';
+
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    page: 1,
-    blogList: [],
+    article: {},
+    userInfo: {},
+    blogMessage: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.queryList();
+    console.log(options);
+    console.time();
+    this.queryDetail(options);
   },
 
   /**
@@ -48,25 +54,15 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: async function () {
-
-    await this.setData({
-      page: 1
-    });
-
-    this.queryList();
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: async function () {
-    await this.setData({
-      page: this.data.page + 1
-    });
+  onReachBottom: function () {
 
-    this.queryList();
   },
 
   /**
@@ -75,30 +71,22 @@ Page({
   onShareAppMessage: function () {
 
   },
+  queryDetail: function (option) {
+    queryDetail(option).then( async res => {
 
-  /**
-   * 搜索框搜索
-   */
-  bindsubmit: function () {
+      await this.setData({
+        blogMessage: res.result.data,
+        userInfo: res.result.data.user,
+      });
 
-  },
+      const text = app.towxml(res.result.data.content, 'html');
 
-/**
- * 请求数据
- */
-queryList: function() {
+      console.log(res.result.data.user, 'res.result.data.user');
 
-  const option = {
-    page: this.data.page,
+      this.setData({
+        article: text
+      });
+
+    });
   }
-
-  return queryList(option).then(res => {
-    console.info(res);
-    this.setData({
-      blogList: res.result.data
-    })
-  });
-
-}
-
 })

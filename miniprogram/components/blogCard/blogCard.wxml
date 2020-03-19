@@ -2,13 +2,13 @@
 <view class="item" catchtap="toPostDetail" data-item="{{item}}">
   <view class="header">
     <view class="header-message">
-      <image class="atvg" src="/images/tab/tab_profile.png"></image>
-      <text class="name">素衣拂微澜</text>
+      <image class="atvg" src="{{item.user.avatarUrl}}"></image>
+      <text class="name">{{item.user.nickName}}</text>
     </view>
   </view>
   <view class="content">
-    <view class="title">深入理解原型链及闭包</view>
-    <view class="desc">啊实打实奥斯丁奥斯丁奥斯丁啊实打实奥斯丁啊实打实大飒飒奥斯丁 奥斯丁奥斯丁奥斯</view>
+    <view class="title">{{item.title}}</view>
+    <view class="desc">{{item.desc}}</view>
   </view>
   <view class="footer">
     <view class="label">
