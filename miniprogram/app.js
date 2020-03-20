@@ -129,6 +129,7 @@ App({
   globalData: {
     openid: "",
     userInfo: null,
+    detailInfo: {}, // 传递详情参数
     advert: {},
     lastLoginDate: ""//最后登录时间
   },

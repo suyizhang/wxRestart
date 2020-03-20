@@ -18,9 +18,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
-    console.time();
-    this.queryDetail(options);
+
+    const blogMessage = app.globalData.detailInfo;
+
+    this.setData({
+      userInfo: blogMessage.user,
+      blogMessage,
+    })
+
+    this.queryDetail(blogMessage);
+
   },
 
   /**
@@ -71,22 +78,18 @@ Page({
   onShareAppMessage: function () {
 
   },
-  queryDetail: function (option) {
-    queryDetail(option).then( async res => {
+  queryDetail: async function (option) {
+    
+    // fileType  html markdown
+    const { fileType, fileID } = option;
+    const res = await queryDetail({ fileID });
+    console.log(res, 'res');
 
-      await this.setData({
-        blogMessage: res.result.data,
-        userInfo: res.result.data.user,
-      });
+    const wxml = app.towxml(res.result, fileType);
 
-      const text = app.towxml(res.result.data.content, 'html');
-
-      console.log(res.result.data.user, 'res.result.data.user');
-
-      this.setData({
-        article: text
-      });
-
+    this.setData({
+      article: wxml
     });
+
   }
 })

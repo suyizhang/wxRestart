@@ -10,6 +10,6 @@
     </view>
   </view>
   <view class="content">
-    <towxml nodes="{{article}}"/>
+    <towxml nodes="{{article}}" />
   </view>
 </view>

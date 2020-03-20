@@ -39,10 +39,18 @@ const queryList = async ({ page = 1 }) => {
       title: true,
       commentTatal: true,
       likeTotal: true,
+      fileType: true,
+      fileID: true,
     }).get();
 
 };
 
-const queryDetail = ({ id }) => {
-  return db.collection('blog_list').doc(id).get()
+const queryDetail = async ({ fileID }) => {
+  // return db.collection('blog_list').doc(id).get()
+  const res = await cloud.downloadFile({
+    fileID,
+  });
+  const buffer = res.fileContent;
+
+  return buffer.toString('utf8');
 }

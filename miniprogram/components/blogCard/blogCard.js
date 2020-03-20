@@ -1,3 +1,5 @@
+const app = getApp();
+
 Component({
   properties: {
     item: {
@@ -8,8 +10,8 @@ Component({
   methods: {
     toPostDetail(e) {
       console.info(e, 'blogCard');
-      const id = e.currentTarget.dataset.item._id;
-      const url = `/pages/detail/detail?id=${id}`;
+      const url = `/pages/detail/detail`;
+      app.globalData.detailInfo = e.currentTarget.dataset.item;
       wx.navigateTo({
         url,
       })

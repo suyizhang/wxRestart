@@ -15,6 +15,13 @@ Page({
    */
   onLoad: function (options) {
     this.queryList();
+    // wx.request({
+    //   url: 'https://7375-suyi-b6byh-1257322032.tcb.qcloud.la/blog/%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E8%AE%B0.md',
+    //   success: function (res) {
+    //     console.log(res);
+    //   }
+    // })
+
   },
 
   /**
