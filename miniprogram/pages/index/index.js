@@ -6,21 +6,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+
     page: 1,
     blogList: [],
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     this.queryList();
-    // wx.request({
-    //   url: 'https://7375-suyi-b6byh-1257322032.tcb.qcloud.la/blog/%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E8%AE%B0.md',
-    //   success: function (res) {
-    //     console.log(res);
-    //   }
-    // })
 
   },
 
@@ -57,11 +54,11 @@ Page({
    */
   onPullDownRefresh: async function () {
 
-    await this.setData({
-      page: 1
-    });
+    await this.setData({ page: 1 });
 
-    this.queryList();
+    await this.queryList();
+
+    wx.stopPullDownRefresh();
 
   },
 
@@ -69,11 +66,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: async function () {
+
     await this.setData({
       page: this.data.page + 1
     });
 
     this.queryList();
+
   },
 
   /**
@@ -100,10 +99,11 @@ queryList: function() {
   }
 
   return queryList(option).then(res => {
-    console.info(res);
+
     this.setData({
       blogList: res.result.data
-    })
+    });
+
   });
 
 }
