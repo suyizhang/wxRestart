@@ -1,2 +1,41 @@
-<!--miniprogram/pages/image/image.wxml-->
-<text>miniprogram/pages/image/image.wxml</text>
+<view class='photo-container'>
+  <view class='photo-header'>
+    <view class='photo-navbar'>
+      <block wx:for='{{tabs}}' wx:key='di'>
+        <view id='{{index}}' class="navbar-card {{ activeIndex == index ? 'navbar-card-active' :''}}" bindtap='tabClick'>
+          <view class='navbar-card-title'>{{item}}</view>
+        </view>
+      </block>
+      <view class="navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+  </view>
+  <view class='photo-content'>
+    <scroll-view class="latest-item-container" hidden="{{activeIndex != 0}}" scroll-y='true' scroll-x='true' bindscrolltolower="pullUpLoad" lower-threshold='200'>
+      <view class='photoList'>
+        <block wx:for='{{photoList1}}' wx:key='di'>
+          <view class='photo-list-view'>
+            <image mode='aspectFit' class='photo-img' style='width: {{ windowWidth - 16 }}px; height: {{(windowWidth - 16) /item.width  * item.height}}px' src='{{item.middleURL}}'></image>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+    <scroll-view class="latest-item-container" hidden="{{activeIndex != 1}}" scroll-y='true' scroll-x='true' bindscrolltolower="pullUpLoad" lower-threshold='200'>
+      <view class='photoList'>
+        <block wx:for='{{photoList2}}' wx:key='di'>
+          <view class='photo-list-view'>
+            <image mode='aspectFit' class='photo-img' style='width: {{ windowWidth - 16 }}px; height: {{(windowWidth - 16) /item.width  * item.height}}px' src='{{item.middleURL}}'></image>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+    <scroll-view class="latest-item-container" hidden="{{activeIndex != 2}}" scroll-y='true' scroll-x='true' bindscrolltolower="pullUpLoad" lower-threshold='200'>
+      <view class='photoList'>
+        <block wx:for='{{photoList3}}' wx:key='*this'>
+          <view class='photo-list-view'>
+            <image mode='aspectFit' class='photo-img' style='width: {{ windowWidth - 16 }}px; height: {{(windowWidth - 16) /item.width  * item.height}}px' src='{{item.middleURL}}'></image>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>

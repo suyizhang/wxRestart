@@ -88,7 +88,7 @@ Page({
   // },
 
   navigatItem: function (e) {
-    return navigatItem(e)
+    // return navigatItem(e)
   },
 
   /**

@@ -80,10 +80,9 @@ Page({
   },
   queryDetail: async function (option) {
     
-    // fileType  html markdown
     const { fileType, fileID } = option;
+    
     const res = await queryDetail({ fileID });
-    console.log(res, 'res');
 
     const wxml = app.towxml(res.result, fileType);
 
