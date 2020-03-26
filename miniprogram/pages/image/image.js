@@ -22,7 +22,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     this.getUpImage(0, this.data.index1);
     this.getWindowScreen();
   },
@@ -30,53 +30,53 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
 
-  tabClick: function(e) {
+  tabClick: function (e) {
     if (e.currentTarget.id == 1 && this.data.photoList2.length == 0) {
       this.getUpImage(1, this.data.index2);
     }
@@ -89,7 +89,7 @@ Page({
     })
   },
 
-  getUpImage: function(id, index) {
+  getUpImage: function (id, index) {
     if (index == 150) {
       index += 30;
     }
@@ -102,7 +102,7 @@ Page({
       api = `https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&queryWord+=&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&hd=&latest=&copyright=&word=%E6%89%8B%E7%BB%98&z=&ic=&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&step_word=%E6%89%8B%E7%BB%98&pn=${index}&rn=30`;
     }
     if (id == 1) {
-      // api = `https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&queryWord=%E6%80%A7%E6%84%9F%E7%BE%8E%E5%A5%B3&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=0&word=%E6%80%A7%E6%84%9F%E7%BE%8E%E5%A5%B3&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&cg=girl&pn=${index}&rn=30`;
+      // api = `https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&queryWord=%E6%80%A7%E6%84%9F%E7%BE%8E%E5%A5%B3&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=0&word=%E6%80%A7%E6%84%9F%E7%BE%8E%E5%A5%B3&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&cg=girl&pn=${index}&rn=30`; // 性感美女
       api = `https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&queryWord=%E5%8A%A8%E6%BC%AB&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=&hd=&latest=&copyright=&word=%E5%8A%A8%E6%BC%AB&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&expermode=&force=&pn={index}&rn=30`;
     }
     if (id == 2) {
@@ -145,7 +145,7 @@ Page({
   },
 
   // 滚动至底部执行函数 还不知道干嘛 先写着
-  pullUpLoad: function() {
+  pullUpLoad: function () {
     let indexId = this.data.activeIndex;
     if (indexId == 0) {
       this.getUpImage(indexId, this.data.index1)
@@ -158,7 +158,7 @@ Page({
     }
   },
   // 获取屏幕宽高
-  getWindowScreen: function() {
+  getWindowScreen: function () {
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
